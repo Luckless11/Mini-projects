@@ -20,6 +20,6 @@ def average_growth(nums):
         else:
             mult_num.append(y / nums[i-1])
 
-    return mult_num
+    return sum(mult_num) / len(mult_num)
 
 print(average_growth(list))
