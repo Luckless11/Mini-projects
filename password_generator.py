@@ -1,16 +1,14 @@
 import random as rand
 
-numbers = "1234567890"
-letters = "abcdefghijklmnopqrstuvwxyz"
-symbols = "!@#$%^&*()-=_+~`[];:'"
+characters = ["1234567890", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "!@#$%^&*()-=_+~`[];:'"]
 
 length = int(input("enter password length here: "))
 
 password = ""
 
 for i in range(length):
-    char = rand.choice([numbers, letters, symbols])
+    char_type = rand.choice([0, 1, 2, 3])
 
-    password += rand.choice(char)
+    password += rand.choice(characters[char_type])
 
 print(password)
