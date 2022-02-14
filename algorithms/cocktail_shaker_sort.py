@@ -2,12 +2,14 @@ def bubble(l, j):
     sorted = False
     if j:
         states = []
-    temp = 0
     swaps = 0
-    comparisons= 0
+    comparisons = 0
+    temp = 0
+    temp2 = 0
+    
     while not sorted:
         sorted = True
-        for i in range(len(l)-temp):
+        for i in range(0 + temp2, len(l)-temp):
             if i != (len(l)-temp)-1:
                 if l[i] > l[i+1]:
                     comparisons += 1
@@ -17,8 +19,19 @@ def bubble(l, j):
                     if j:
                         states.append(l.copy())
         temp += 1
+
+        for i in range(len(l)-temp, -1 + temp2, -1):
+            if i != 0:
+                if l[i] < l[i-1]:
+                    comparisons += 1
+                    l[i], l[i-1] = l[i-1], l[i]
+                    swaps + 1
+                    if j:
+                        states.append(l.copy())
+        temp2 += 1
     
     print(f"Swaps: {swaps} \nComparisons: {comparisons}")
+
     if j:
         return states
     return l
