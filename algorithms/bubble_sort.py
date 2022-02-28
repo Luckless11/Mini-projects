@@ -23,4 +23,4 @@ def bubble(l, j):
         return states
     return l
 
-print(bubble([int(i) for i in input("enter a list of numbers separated by commas (e.g., 5,2,3,1,4): ").split(',')], bool(int(input("enter 1 if you want to see each state, else, enter 0: ")))))
+print(bubble(list(map(int, input("enter a list of numbers (e.g., 5, 2, 3, 1, 4): ").split(","))), int(input("enter 1 if you want to see each state, else, enter 0: "))))
