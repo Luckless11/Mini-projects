@@ -1,0 +1,30 @@
+#! /usr/bin/ruby
+# This isn't the most accurate btw
+
+puts "Enter a number"
+num = gets.to_i
+
+if num == 1
+  puts "1 is not prime or composite"
+  exit
+end
+
+if (num % 2 == 0 || num % 5 == 0) && (num != 2 && num != 5)
+  puts "#{num} is not a prime number"
+  exit
+end
+
+if num == 2 or num == 5
+  puts "#{num} is a prime number"
+  exit
+end
+
+x = (num/6.0).round
+
+if 6*x+1 == num or 6*x-1 == num
+  puts "#{num} is a prime number"
+  exit
+else
+  puts "#{num} is not a prime number"
+  exit
+end

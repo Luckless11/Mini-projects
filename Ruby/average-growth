@@ -1,0 +1,9 @@
+#! /user/bin/ruby
+# I have no idea if this is the best way to do it lmao
+
+arr = gets.split(",").map(&:to_f)
+diff = []
+
+1.upto((arr.length)-1) { |i| diff.push(arr[i]/arr[i-1]) }
+
+puts "average growth (in multiplication) of list is #{diff.sum / diff.length}"

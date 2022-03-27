@@ -1,0 +1,28 @@
+#! /usr/bin/ruby
+
+puts "What is the ordinal number of the prime number you want? (e.g., enter 1 to get 2, 2 to get 3, 3 to get 5, etc)"
+ordinal = gets.to_i
+
+primes = []
+
+if ordinal == 1
+  puts 2
+else
+  x = 3
+end
+  
+while primes.length < ordinal
+  y = x
+  for i in primes
+    if x % i == 0
+      x += 2
+      break
+    end
+  end
+  if y == x
+    primes.push(x)
+    x += 2
+  end
+end
+
+puts "The prime number is #{primes[ordinal-2]}"
